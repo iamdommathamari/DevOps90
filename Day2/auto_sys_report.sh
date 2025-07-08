@@ -27,4 +27,3 @@ echo -e "\n[Top Processes]" >> $LOGFILE
 ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 10 >> $LOGFILE
 
 echo -e "\nReport Completed ✅\n" >> $LOGFILE
-
