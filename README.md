@@ -38,8 +38,8 @@ Welcome to my 90-day DevOps transformation journey! I'm transitioning from a **S
 
 I’ll be pushing daily projects, scripts, configurations, and notes here.
 
-- [Day 1 – DevOps Introduction + Linux Basics](./devops-journey-day1)
-- [Day 2 – Bash Script Automation](#)
+- [Day 1 – DevOps Introduction + Linux Basics](./Day1)
+- [Day 2 – Bash Script Automation](./Day2)
 - [Day 3 – GitHub Repository Management](#)
 - (More coming soon...)
 
