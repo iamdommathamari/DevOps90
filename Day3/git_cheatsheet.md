@@ -74,5 +74,3 @@ git reset --hard HEAD         # Reset to last commit
 - When should you use `rebase` vs `merge`?
 
 ---
-
-📌 Save this for daily reference while practicing Git in your DevOps projects!
