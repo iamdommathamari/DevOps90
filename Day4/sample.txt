@@ -1,0 +1,5 @@
+DevOps is powerful
+Automation is key
+Scripts run everything
+Infrastructure as Code
+Monitoring is essential
