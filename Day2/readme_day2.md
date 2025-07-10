@@ -1,94 +1,137 @@
+# 🐧 Day 2: Linux Commands + Shell Scripting Basics
 
-# 🚀 Day 2: Linux CLI + Bash Scripting – 90-Day DevOps Challenge
-
-📅 **Challenge:** Day 2/90  
-📂 **Focus:** Mastering Linux commands and writing a basic system monitoring Bash script  
-👤 **By:** Mohith D (@iamdommathamari)
-
----
-
-## 🧠 What I Learned
-
-- Essential Linux commands like `pwd`, `cd`, `ls`, `mkdir`, `rm`, `top`, `df`, `free`, `uptime`
-- The basics of Bash scripting
-- How to automate repetitive system checks using a shell script
-- How to schedule the script using `cron`
+## 📚 Topics Covered
+- Basic Linux commands and navigation
+- File and directory operations
+- User permissions and access modes
+- Writing and running basic shell scripts
+- Script arguments, conditionals, and execution
 
 ---
 
-## 📄 Project: `auto_sys_report.sh`
+## 🔍 Essential Linux Commands
 
-A shell script that logs:
+| Command | Description |
+|---------|-------------|
+| `pwd`   | Show current directory |
+| `ls`    | List files and folders |
+| `cd`    | Change directory |
+| `mkdir` | Create a directory |
+| `touch` | Create an empty file |
+| `rm`    | Remove a file or directory |
+| `cp`    | Copy file/folder |
+| `mv`    | Move or rename file/folder |
+| `cat`   | View contents of a file |
+| `echo`  | Print text or variable |
 
-- System uptime
-- Disk usage
-- Memory usage
-- Top memory-consuming processes
+---
 
-### 🔧 Script
+## 🔐 Understanding File Permissions
 
+```bash
+ls -l filename
+```
+
+Example output:
+```
+-rwxr-xr--  1 user user 1024 Jul 9 12:00 hello.sh
+```
+
+| Symbol | Meaning |
+|--------|---------|
+| `r`    | Read    |
+| `w`    | Write   |
+| `x`    | Execute |
+
+Change permissions:
+```bash
+chmod +x hello.sh   # Make script executable
+chmod 755 hello.sh  # rwxr-xr-x
+```
+
+---
+
+## 📝 Writing Your First Shell Script
+
+Create `hello.sh`:
 ```bash
 #!/bin/bash
 
-# System Health Report Script
-LOGFILE="/var/log/sys_health_report.log"
-
-echo "----------------------------------------" >> $LOGFILE
-echo "System Report - $(date '+%Y-%m-%d %H:%M:%S')" >> $LOGFILE
-echo "----------------------------------------" >> $LOGFILE
-
-echo "[Uptime]" >> $LOGFILE
-uptime >> $LOGFILE
-
-echo -e "\n[Disk Usage]" >> $LOGFILE
-df -h >> $LOGFILE
-
-echo -e "\n[Memory Usage]" >> $LOGFILE
-free -m >> $LOGFILE
-
-echo -e "\n[Top Processes]" >> $LOGFILE
-ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head -n 10 >> $LOGFILE
-
-echo -e "\nReport Completed ✅\n" >> $LOGFILE
+echo "Hello, Mohith!"
 ```
 
 ---
 
-## ⏰ Scheduled via Cron
+## 🧪 Script with Input and Logic
 
+Create `greet.sh`:
 ```bash
-crontab -e
-# Add the following line to run script every hour:
-0 * * * * /bin/bash /path/to/auto_sys_report.sh
+#!/bin/bash
+name=$1
+if [ -z "$name" ]; then
+  echo "No name provided!"
+else
+  echo "Hello, $name!"
+fi
 ```
 
 ---
 
-## 🧪 DevOps Interview Prep – Day 2
+## 🩺 System Health Check Script
 
-**Q: Why is Linux important in DevOps?**  
-A: Linux is the foundation for most cloud servers and DevOps tools. It provides flexibility, security, and automation capabilities.
+Create `auto_sys_health.sh`:
+```bash
+#!/bin/bash
 
-**Q: What is Bash scripting?**  
-A: A Bash script is a file with a series of commands that can automate tasks in Unix/Linux systems.
-
-**Q: Difference between `sh` and `bash`?**  
-A: `bash` (Bourne Again SHell) is more powerful than `sh` with enhanced scripting features.
-
----
-
-## 📸 LinkedIn Post Summary
-
-> 🎯 Day 2/90 – Linux CLI + Bash scripting  
-> Built a system health script using Bash and learned about cron jobs for automation.  
-> 🚀 Every command typed is a step toward DevOps mastery.  
->  
-> #DevOps #Linux #Bash #ShellScripting #CareerSwitch
+echo "--- System Health Report ---"
+echo "Hostname: $(hostname)"
+echo "Uptime: $(uptime -p)"
+echo "Logged-in Users: $(who | wc -l)"
+echo "Memory Usage:"
+free -h
+echo "Disk Usage:"
+df -h /
+```
 
 ---
 
-✅ **Badge:** ![Day 2 Completed](https://img.shields.io/badge/Day%202-Completed-brightgreen)
+## 📂 Folder Structure
+
+```
+📁 90-Days-of-DevOps/
+└── 📁 day02/
+    ├── 📄 README.md
+    ├── 🐚 hello.sh
+    ├── 🐚 greet.sh
+    └── 🐚 auto_sys_health.sh
+```
 
 ---
 
-📍 **Next Up: Day 3 – Git + GitHub mastery**
+## 📢 LinkedIn Post Template
+
+```
+📅 Day 2 of My 90-Day DevOps Challenge 🐧
+
+Today's focus: Linux + Shell Scripting 📜
+
+🔹 Mastered essential Linux commands
+🔹 Wrote and executed 3 shell scripts:
+    ✅ hello.sh
+    ✅ greet.sh
+    ✅ auto_sys_health.sh
+
+👨‍💻 From Service Desk Analyst to DevOps Engineer in the making!
+
+📂 GitHub: github.com/iamdommathamari/90-Days-of-DevOps
+
+#DevOps #Linux #ShellScripting #90DaysOfDevOps #LearnInPublic
+```
+
+---
+
+## 📎 Reference Resources
+
+- [Linux Command Cheat Sheet](https://cheatography.com/davechild/cheat-sheets/linux-command-line/)
+- [Bash Scripting Basics](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [GNU Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
