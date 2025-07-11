@@ -1,0 +1,10 @@
+# Cron Schedule Examples
+
+# Backup logs every Sunday at 2 AM
+0 2 * * 0 /bin/bash /path/to/backup_logs.sh >> $HOME/log_backup.log 2>&1
+
+# Log uptime every day at 9 AM
+0 9 * * * /bin/bash /path/to/uptime_logger.sh >> $HOME/uptime.log 2>&1
+
+# Auto Git commit and push every hour
+0 * * * * /bin/bash /path/to/auto_git_push.sh >> $HOME/git_auto_push.log 2>&1
