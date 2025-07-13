@@ -15,3 +15,7 @@
    # Linux
    docker --version
    docker run hello-world
+
+## 📌 Key Observations
+- The hello-world image is only 13.3kB!
+- Containers are ephemeral by default
