@@ -1,5 +1,14 @@
 # Day 1: Docker Basics
 
+DevOps90/
+└── DAy01/
+    ├── README.md          # Documentation
+    ├── commands.md        # All commands used
+    ├── hello-world-test/  # Optional advanced test
+    │   └── Dockerfile     # Custom hello-world image
+    └── notes/            # Personal learning notes
+        └── concepts.md
+
 ## 🐳 What I Learned
 - Docker architecture (images vs containers)
 - Running first container (`hello-world`)

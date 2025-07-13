@@ -17,3 +17,9 @@ docker rm <container_id>
 
 # Remove an image
 docker rmi <image_name>
+
+# Show container details
+docker inspect <container_id>
+
+# View Docker disk usage
+docker system df
