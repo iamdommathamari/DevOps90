@@ -62,3 +62,7 @@ DevOps enhances the software development process by:
 ## what is Continuous Integration
 
 - Contionous Integration (CI) is the practice of merging all developer working copies to a shared mainline several times a day. This helps detect and locate errors quickly and improve software quality.
+
+## what is Continous Delovery?
+- Continous Delivery(CD) is the practice of keeping the codebase in a deployable state, enabling frequent and automated deployment to production or staging.
+
